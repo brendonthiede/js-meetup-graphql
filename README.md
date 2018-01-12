@@ -1,4 +1,4 @@
-# js-meetup-graphql
+# GraphQL: Better than the REST
 
 This is for the February 20, 2018 Lansing JavaScript Meetup
 
