@@ -37,9 +37,9 @@
             <section>
                 <h3 style="text-align: left;">Brendon Thiede</h3>
                 <ul>
-                    <li style="text-align: left;">DevOps Engineer at the Michigan Supreme Court</li>
-                    <li style="text-align: left;">Focused on Automation</li>
-                    <li style="text-align: left;">Hacking on JavaScript for 20 years</li>
+                    <li>DevOps Engineer at the Michigan Supreme Court</li>
+                    <li>Focused on Automation</li>
+                    <li>Hacking on JavaScript for 20 years</li>
                 </ul>
             </section>
             <section>
@@ -65,16 +65,11 @@
     <script src="js/reveal.js"></script>
 
     <script>
-        // More info about config & dependencies:
-        // - https://github.com/hakimel/reveal.js#configuration
-        // - https://github.com/hakimel/reveal.js#dependencies
         Reveal.initialize({
             dependencies: [
-                { src: 'plugin/markdown/marked.js' },
-                { src: 'plugin/markdown/markdown.js' },
-                { src: 'plugin/notes/notes.js', async: true },
                 { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
-            ]
+            ],
+            history: true
         });
     </script>
 </body>
