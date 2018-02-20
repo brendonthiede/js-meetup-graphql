@@ -7,7 +7,7 @@
 
     <link rel="icon" type="image/png" href="images/graphql.png">
 
-    <title>reveal.js</title>
+    <title>GraphQL - Lansing JS Meetup</title>
 
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/night.css">
@@ -134,26 +134,72 @@
                     </table>
                 </section>
                 <section>
-                    <section>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Imperative</th>
-                                    <th>Declarative</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>How</td>
-                                    <td>What</td>
-                                </tr>
-                                <tr>
-                                    <td>Nested/Complex</td>
-                                    <td>Flat/Simple</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </section>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Imperative</th>
+                                <th>Declarative</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>How</td>
+                                <td>What</td>
+                            </tr>
+                            <tr>
+                                <td>Nested/Complex</td>
+                                <td>Flat/Simple</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Imperative</th>
+                                <th>Declarative</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <pre><code>
+axios.get('http://localhost:3000/api/people')
+  .then(response => {
+    this.people = response.data
+    this.people.forEach(person => {
+      axios.get('http://localhost:3000/api/species/' + person.species)
+        .then(response => {
+          person.species = response.data
+        })
+      axios.get('http://localhost:3000/api/homeworld/' + person.homeworld)
+        .then(response => {
+          person.homeworld = response.data
+        })
+    })
+})
+                                      </code></pre>
+                                </td>
+                                <td>
+                                    <pre><code>
+{
+  people {
+    name
+    gender
+    species {
+      name
+    }
+    birth_year
+    homeworld {
+      name
+    }
+  }
+}</code></pre>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </section>
             </section>
         </div>
