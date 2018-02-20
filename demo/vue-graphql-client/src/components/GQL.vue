@@ -17,11 +17,11 @@ export default {
           name
           gender
           species {
-            speciesName: name
+            name
           }
           birth_year
           homeworld {
-            homeworldName: name
+            name
           }
         }
       }

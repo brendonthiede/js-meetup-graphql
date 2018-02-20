@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="people-list">
     <div v-for="person in people" v-bind:key="person.id">
       <bio :person="person"></bio>
     </div>
