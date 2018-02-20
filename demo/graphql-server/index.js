@@ -6,6 +6,7 @@ const { makeExecutableSchema } = require('graphql-tools')
 const _ = require('lodash')
 const people = require('./data/people.json')
 const homeworlds = require('./data/homeworlds.json')
+const species = require('./data/species.json')
 
 // The GraphQL schema in string form
 const typeDefs = `
@@ -13,8 +14,7 @@ type Query {
     hello: String,
     people: [Person],
     person(id: Int): Person,
-    homeworlds: [HomeWorld],
-    homeworld(id: Int): HomeWorld
+    peopleByHairColor(hair_color: String): [Person]
 }
 
 type Person {
@@ -27,8 +27,10 @@ type Person {
     eye_color: String,
     birth_year: String,
     gender: String,
-    homeworld: HomeWorld
+    homeworld: HomeWorld,
+    species: Species
 }
+
 type HomeWorld {
     id: ID!,
     name: String!,
@@ -46,6 +48,25 @@ type HomeWorld {
     edited: String,
     url: String
 }
+
+type Species {
+    id: ID!,
+    name: String,
+    classification: String,
+    designation: String,
+    average_height: Int,
+    skin_colors: String,
+    hair_colors: String,
+    eye_colors: String,
+    average_lifespan: Int,
+    homeworld: HomeWorld,
+    language: String,
+    people: [String],
+    films: [String],
+    created: String,
+    edited: String,
+    url: String
+}
 `
 
 // The resolvers
@@ -54,11 +75,14 @@ const resolvers = {
         hello: (root, args, context) => "Hello world!",
         people: () => people,
         person: (root, args) => _.find(people, args),
-        homeworlds: () => homeworlds,
-        homeworld: (root, args) => _.find(homeworlds, args)
+        peopleByHairColor: (root, args) => _.filter(people, args)
     },
     Person: {
-        homeworld: (person) => _.find(homeworlds, { id: person.homeworld })
+        homeworld: (person) => _.find(homeworlds, { id: person.homeworld }),
+        species: (person) => _.find(species, { id: person.species })
+    },
+    Species: {
+        homeworld: (species) => _.find(homeworlds, { id: species.homeworld })
     }
 }
 
