@@ -202,6 +202,71 @@ axios.get('http://localhost:3000/api/people')
                     </table>
                 </section>
             </section>
+            <section>
+                <section>
+                    <h2>Getting Started with vue-apollo</h2>
+                </section>
+                <section>
+                    <h3>Node packages</h3>
+                    <pre><code>npm install --save vue-apollo graphql apollo-client apollo-link
+npm install --save apollo-link-http apollo-cache-inmemory graphql-tag</code></pre>
+                </section>
+                <section>
+                    <h3>main.js</h3>
+                    <pre><code>
+...
+import { ApolloClient } from 'apollo-client'
+import { HttpLink } from 'apollo-link-http'
+import { InMemoryCache } from 'apollo-cache-inmemory'
+import VueApollo from 'vue-apollo'
+
+const apolloClient = new ApolloClient({
+    link: new HttpLink({uri: 'http://localhost:3000/graphql'}),
+    cache: new InMemoryCache(),
+    connectToDevTools: true
+})
+
+Vue.use(VueApollo)
+
+const apolloProvider = new VueApollo({
+    defaultClient: apolloClient
+})
+
+new Vue({
+    ...
+    provide: apolloProvider.provide(),
+    ...
+})
+                    </code></pre>
+                </section>
+                <section>
+                    <h3>In Your Component</h3>
+                    <pre><code>
+import gql from 'graphql-tag'
+
+export default {
+    apollo: {
+        propName: gql`
+            {
+                theType {
+                    theFields
+                    ...
+                }
+            }`
+    },
+    data () {
+        return {
+            // Initialize your apollo data
+            propName: ''
+        }
+    }
+}
+                    </code></pre>
+                </section>
+            </section>
+            <section>
+                <h1>Demo</h1>
+            </section>
         </div>
     </div>
 
