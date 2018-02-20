@@ -1,18 +1,12 @@
 <template>
   <div>
-    <div v-for="person in people" v-bind:key="person.id">
-      <h3>{{ person.name }}</h3>
-      <span v-if="person.gender !== 'n/a'">
-      {{ person.gender }}
-      </span>{{ person.species.speciesName }}
-      born in {{ person.birth_year }} on {{ person.homeworld.homeworldName }}
-      <hr/>
-    </div>
+    <people-list :people="people" />
   </div>
 </template>
 
 <script>
 import gql from 'graphql-tag'
+import PeopleList from '@/components/PeopleList'
 
 export default {
   apollo: {
@@ -32,6 +26,9 @@ export default {
         }
       }
     `
+  },
+  components: {
+    'people-list': PeopleList
   },
   data () {
     return {
