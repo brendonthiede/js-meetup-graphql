@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import HelloMeetup from '@/components/HelloMeetup'
 import GQL from '@/components/GQL'
 import REST from '@/components/REST'
 
@@ -10,8 +10,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'HelloMeetup',
+      component: HelloMeetup
     },
     {
       path: '/gql',
