@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
-import SwapiDemo from '@/components/SwapiDemo'
+import GQL from '@/components/GQL'
+import REST from '@/components/REST'
 
 Vue.use(Router)
 
@@ -13,9 +14,14 @@ export default new Router({
       component: HelloWorld
     },
     {
-      path: '/swapi',
-      name: 'SwapiDemo',
-      component: SwapiDemo
+      path: '/gql',
+      name: 'GQL',
+      component: GQL
+    },
+    {
+      path: '/rest',
+      name: 'REST',
+      component: REST
     }
   ]
 })

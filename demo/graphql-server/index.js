@@ -100,7 +100,7 @@ const router = express.Router()
 const restfulRoutes = require('./restful-routes')
 restfulRoutes.init(router)
 
-app.use('/api', router)
+app.use('/api', cors(), router)
 
 // The GraphQL endpoint
 app.use('/graphql', cors(), bodyParser.json(), graphqlExpress({ schema }))
