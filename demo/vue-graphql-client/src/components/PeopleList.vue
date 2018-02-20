@@ -9,7 +9,6 @@
 <script>
 import Bio from '@/components/Bio'
 
-
 export default {
   name: 'PeopleList',
   props: ['people'],
