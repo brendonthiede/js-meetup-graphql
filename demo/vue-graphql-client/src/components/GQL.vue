@@ -10,7 +10,6 @@ import PeopleList from '@/components/PeopleList'
 
 export default {
   apollo: {
-    // Simple query that will update the 'hello' vue property
     people: gql`
       {
         people {

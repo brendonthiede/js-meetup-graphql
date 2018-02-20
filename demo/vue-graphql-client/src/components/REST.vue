@@ -1,9 +1,6 @@
 <template>
   <div>
-    <div v-if="$apollo.loading">Loading...</div>
-    <div v-else>
-      <people-list :people="people" />
-    </div>
+    <people-list :people="people" />
   </div>
 </template>
 
