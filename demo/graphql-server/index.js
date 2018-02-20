@@ -1,13 +1,22 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const cors = require('cors');
+const cors = require('cors')
 const { graphqlExpress, graphiqlExpress } = require('apollo-server-express')
 const { makeExecutableSchema } = require('graphql-tools')
+const _ = require('lodash')
 const people = require('./data/people.json')
+const homeworlds = require('./data/homeworlds.json')
 
 // The GraphQL schema in string form
 const typeDefs = `
-type Query { hello: String, people: [Person], person(id: Int): Person }
+type Query {
+    hello: String,
+    people: [Person],
+    person(id: Int): Person,
+    homeworlds: [HomeWorld],
+    homeworld(id: Int): HomeWorld
+}
+
 type Person {
     id: ID!,
     name: String!,
@@ -18,7 +27,24 @@ type Person {
     eye_color: String,
     birth_year: String,
     gender: String,
-    homeworld: String
+    homeworld: HomeWorld
+}
+type HomeWorld {
+    id: ID!,
+    name: String!,
+    rotation_period: Int,
+    orbital_period: Int,
+    diameter: Int,
+    climate: String,
+    gravity: String,
+    terrain: String,
+    surface_water: Int,
+    population: Int,
+    residents: [String],
+    films: [String],
+    created: String,
+    edited: String,
+    url: String
 }
 `
 
@@ -27,7 +53,12 @@ const resolvers = {
     Query: {
         hello: (root, args, context) => "Hello world!",
         people: () => people,
-        person: (root, { id }) => people.find(person => person.id === id)
+        person: (root, args) => _.find(people, args),
+        homeworlds: () => homeworlds,
+        homeworld: (root, args) => _.find(homeworlds, args)
+    },
+    Person: {
+        homeworld: (person) => _.find(homeworlds, { id: person.homeworld })
     }
 }
 

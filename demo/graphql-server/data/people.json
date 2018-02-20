@@ -9,7 +9,7 @@
         "eye_color": "blue",
         "birth_year": "19BBY",
         "gender": "male",
-        "homeworld": "http://swapi.co/api/planets/1/",
+        "homeworld": 1,
         "films": [
             "http://swapi.co/api/films/2/",
             "http://swapi.co/api/films/6/",
@@ -42,7 +42,7 @@
         "eye_color": "blue",
         "birth_year": "200BBY",
         "gender": "male",
-        "homeworld": "https://swapi.co/api/planets/14/",
+        "homeworld": 14,
         "films": [
             "https://swapi.co/api/films/2/",
             "https://swapi.co/api/films/6/",
@@ -74,7 +74,7 @@
         "eye_color": "brown",
         "birth_year": "29BBY",
         "gender": "male",
-        "homeworld": "https://swapi.co/api/planets/22/",
+        "homeworld": 22,
         "films": [
             "https://swapi.co/api/films/2/",
             "https://swapi.co/api/films/3/",
@@ -103,7 +103,7 @@
         "eye_color": "black",
         "birth_year": "44BBY",
         "gender": "male",
-        "homeworld": "https://swapi.co/api/planets/23/",
+        "homeworld": 23,
         "films": [
             "https://swapi.co/api/films/1/"
         ],
@@ -126,7 +126,7 @@
         "eye_color": "orange",
         "birth_year": "600BBY",
         "gender": "hermaphrodite",
-        "homeworld": "https://swapi.co/api/planets/24/",
+        "homeworld": 24,
         "films": [
             "https://swapi.co/api/films/4/",
             "https://swapi.co/api/films/3/",
@@ -151,7 +151,7 @@
         "eye_color": "hazel",
         "birth_year": "21BBY",
         "gender": "male",
-        "homeworld": "https://swapi.co/api/planets/22/",
+        "homeworld": 22,
         "films": [
             "https://swapi.co/api/films/2/",
             "https://swapi.co/api/films/3/",
@@ -180,7 +180,7 @@
         "eye_color": "yellow",
         "birth_year": "112BBY",
         "gender": "n/a",
-        "homeworld": "https://swapi.co/api/planets/1/",
+        "homeworld": 1,
         "films": [
             "https://swapi.co/api/films/2/",
             "https://swapi.co/api/films/5/",
@@ -208,7 +208,7 @@
         "eye_color": "red",
         "birth_year": "33BBY",
         "gender": "n/a",
-        "homeworld": "https://swapi.co/api/planets/8/",
+        "homeworld": 8,
         "films": [
             "https://swapi.co/api/films/2/",
             "https://swapi.co/api/films/5/",
@@ -237,7 +237,7 @@
         "eye_color": "yellow",
         "birth_year": "41.9BBY",
         "gender": "male",
-        "homeworld": "https://swapi.co/api/planets/1/",
+        "homeworld": 1,
         "films": [
             "https://swapi.co/api/films/2/",
             "https://swapi.co/api/films/6/",
@@ -265,7 +265,7 @@
         "eye_color": "brown",
         "birth_year": "19BBY",
         "gender": "female",
-        "homeworld": "https://swapi.co/api/planets/2/",
+        "homeworld": 2,
         "films": [
             "https://swapi.co/api/films/2/",
             "https://swapi.co/api/films/6/",
@@ -294,7 +294,7 @@
         "eye_color": "blue",
         "birth_year": "52BBY",
         "gender": "male",
-        "homeworld": "https://swapi.co/api/planets/1/",
+        "homeworld": 1,
         "films": [
             "https://swapi.co/api/films/5/",
             "https://swapi.co/api/films/6/",
@@ -319,7 +319,7 @@
         "eye_color": "blue",
         "birth_year": "47BBY",
         "gender": "female",
-        "homeworld": "https://swapi.co/api/planets/1/",
+        "homeworld": 1,
         "films": [
             "https://swapi.co/api/films/5/",
             "https://swapi.co/api/films/6/",
@@ -344,7 +344,7 @@
         "eye_color": "blue-gray",
         "birth_year": "57BBY",
         "gender": "male",
-        "homeworld": "https://swapi.co/api/planets/20/",
+        "homeworld": 20,
         "films": [
             "https://swapi.co/api/films/2/",
             "https://swapi.co/api/films/5/",
